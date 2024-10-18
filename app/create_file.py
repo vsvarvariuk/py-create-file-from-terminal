@@ -3,13 +3,12 @@ import os
 import datetime
 
 
-def create_directory(path_parts):
+def create_directory(path_parts: str) -> None:
     path = os.path.join(*path_parts)
     os.makedirs(path, exist_ok=True)
-    print(f"Created directory: {path}")
 
 
-def create_file(file_1):
+def create_file(file_1: str) -> None:
     content = []
     while True:
         input_info = input("enter content:")
@@ -32,7 +31,7 @@ def create_file(file_1):
                 f.write(f"{num} {elem}\n")
 
 
-def main():
+def main() -> None:
     args = sys.argv[1:]
     dir_parts = []
     name_file = None
